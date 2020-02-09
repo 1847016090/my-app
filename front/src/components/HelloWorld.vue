@@ -3,12 +3,15 @@
       <div class="bg bg-blur"></div>
       <div class="content content-front">
         <div class="vertical-center">
-          <van-image
+          <!-- <van-image
           round
           width="10rem"
           height="10rem"
           src="https://img.yzcdn.cn/vant/cat.jpeg"
-        />
+        /> -->
+        <div class="header">
+          K
+        </div>
         <div class="user-name">Stephen Ye</div>
         <div class="input-content">
           <van-cell-group class="inputs">
@@ -108,10 +111,25 @@ export default {
     height: 100vh;
     width: 100vw;
     .vertical-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       height: 70vh
     }
     .user-name {
       margin-bottom: 20px;
+    }
+    .header {
+      margin-bottom: 10px;
+      width: 120px;
+      height: 120px;
+      background: transparent;
+      color: white;
+      font-size: 80px;
+      line-height: 120px;
+      text-align: center;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255, 0.5);
     }
     .input-content {
       width: 80vw;
