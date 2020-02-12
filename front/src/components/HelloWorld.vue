@@ -3,12 +3,6 @@
       <div class="bg bg-blur"></div>
       <div class="content content-front">
         <div class="vertical-center">
-          <!-- <van-image
-          round
-          width="10rem"
-          height="10rem"
-          src="https://img.yzcdn.cn/vant/cat.jpeg"
-        /> -->
         <div class="header">
           K
         </div>
@@ -19,8 +13,9 @@
               left-icon="envelop-o"
               label-align="left"
               input-align="center"
-              placeholder="user info"
+              placeholder="user"
               class="user-info"
+              v-model="form.user"
             />
             <van-field
               left-icon="bag-o"
@@ -28,10 +23,10 @@
               input-align="center"
               placeholder="password"
               class="password"
+              v-model="form.password"
             />
           </van-cell-group>
-          <van-button v-if="login" @click="clickLogin" class="login-btn" type="default" size="large">Login</van-button>
-          <van-button v-else loading class="login-loading" />
+          <van-button v-bind:loading="isLogining" @click="clickLogin" class="login-btn" type="default" size="large">Login</van-button>
           <link rel="stylesheet" href="22222" />
         </div>
         </div>
@@ -40,16 +35,26 @@
 </template>
 
 <script>
+import api from '../utils/Contant'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      login: true
+      isLogining: false,
+      form: {
+        user: '',
+        password: ''
+      }
     }
   },
   methods: {
-    clickLogin() {
-      setTimeout(() => this.login = false, 300)
+    async clickLogin() {
+      this.isLogining = true;
+      const { status } = await this.axios.post(api.login, this.form)
+      console.log(status)
+      if(status === 200) {
+        setTimeout(()=> this.isLogining=false, 1000)
+      }
     },
   }
 }
@@ -142,18 +147,6 @@ export default {
           background: rgba(0,0,0,0);
         }
       }
-    }
-    .login-btn {
-      &:focus {
-        background: #40D2BB;
-        border: #40D2BB;
-      }
-    }
-    .login-loading{
-      border-radius: 50%;
-      height: 50px;
-      background: #40D2BB;
-      border: #40D2BB;
     }
   }
 </style>

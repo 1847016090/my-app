@@ -1,0 +1,13 @@
+@host = localhost
+@port = 3000
+@type = user
+// user login
+POST http://{{host}}:{{port}}/{{type}}/login HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Hendry",
+    "body": ""
+}
+
+###
