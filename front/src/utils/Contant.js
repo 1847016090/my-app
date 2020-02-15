@@ -1,7 +1,8 @@
 const apiPrefix = "http://localhost:3000";
 
-const api = {
-  login: apiPrefix + "/user/login"
+const user = {
+  login: apiPrefix + "/user/login",
+  modules: apiPrefix + "/user/modules"
 };
 
-export default api;
+export default user;

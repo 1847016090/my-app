@@ -1,9 +1,9 @@
 <template>
   <div>
     <TabBar>
-      <van-tabs>
-        <van-tab v-for="index in 8" :title="'标签 ' + index" :key="index">
-          内容 {{ index }}
+      <van-tabs background="#4fc08d">
+        <van-tab v-for="item in myModules" :title="item.title" :key="item.key">
+          {{item.title}}
         </van-tab>
       </van-tabs>
     </TabBar>
@@ -12,9 +12,25 @@
 
 <script>
 import TabBar from "@/components/common/tab-bar";
+import api from "../../utils/Contant";
 export default {
   data() {
-    return {};
+    return {
+        myModules: []
+    };
+  },
+  created() {
+    this.initModules();
+  },
+  methods: {
+    async initModules() {
+      const {
+        data: {
+          data: { myModules }
+        }
+      } = await this.axios.get(api.modules);
+      this.myModules = myModules;
+    }
   },
   components: {
     TabBar

@@ -9,9 +9,7 @@ const successRequest = (message, data) => {
   return {
     message,
     status: 200,
-    data: {
-      data
-    }
+    data
   };
 };
 

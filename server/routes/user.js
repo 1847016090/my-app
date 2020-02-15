@@ -29,9 +29,8 @@ router.post("/login", async ctx => {
 
 router.get("/modules", async ctx => {
   let modules = db.setCollection("modules");
-  console.log(modules);
-  const myModels = await modules.find(JSON.stringify({})).toArray();
-  ctx.body = successRequest("Success", { myModels });
+  const myModules = await modules.find(JSON.stringify({})).toArray();
+  ctx.body = successRequest("Success", { myModules });
 });
 
 module.exports = router;
