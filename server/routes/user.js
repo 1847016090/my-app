@@ -21,14 +21,17 @@ router.post("/login", async ctx => {
     loginUser.password !== dbUser.password;
 
   if (loginInfoNotRight) {
-    ctx.body = errorRequest("你的账号或者密码不正确");
+    ctx.body = errorRequest("Your password or loginname is not right!");
   } else {
-    ctx.body = successRequest("登陆成功", {});
+    ctx.body = successRequest("Login successfully!", {});
   }
 });
 
 router.get("/modules", async ctx => {
   let modules = db.setCollection("modules");
   console.log(modules);
+  const myModels = await modules.find(JSON.stringify({})).toArray();
+  ctx.body = successRequest("Success", { myModels });
 });
+
 module.exports = router;
