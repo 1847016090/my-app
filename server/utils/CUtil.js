@@ -4,6 +4,18 @@ const errorRequest = message => {
     message
   };
 };
+
+const successRequest = (message, data) => {
+  return {
+    message,
+    status: 200,
+    data: {
+      data
+    }
+  };
+};
+
 module.exports = {
-  errorRequest
+  errorRequest,
+  successRequest
 };

@@ -1,8 +1,8 @@
 @host = localhost
 @port = 3000
-@type = user
+@user = user
 // user login
-POST http://{{host}}:{{port}}/{{type}}/login HTTP/1.1
+POST http://{{host}}:{{port}}/{{user}}/login HTTP/1.1
 content-type: application/json
 
 {

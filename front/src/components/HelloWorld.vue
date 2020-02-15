@@ -51,9 +51,8 @@ export default {
     async clickLogin() {
       this.isLogining = true;
       const { status } = await this.axios.post(api.login, this.form)
-      console.log(status)
       if(status === 200) {
-        setTimeout(()=> this.isLogining=false, 1000)
+        this.isLogining=false;
       }
     },
   }
