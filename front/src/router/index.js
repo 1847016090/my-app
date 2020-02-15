@@ -1,15 +1,27 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Vue from "vue";
+import Router from "vue-router";
+import Login from "@/components/login";
+import HomePage from "@/components/home";
+import Setting from "@/components/setting";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: "/",
+      name: "HelloWorld",
+      component: Login
+    },
+    {
+      path: "/home",
+      name: "HomePage",
+      component: HomePage
+    },
+    {
+      path: "/setting",
+      name: "Setting",
+      component: Setting
     }
   ]
-})
+});

@@ -27,4 +27,8 @@ router.post("/login", async ctx => {
   }
 });
 
+router.get("/modules", async ctx => {
+  let modules = db.setCollection("modules");
+  console.log(modules);
+});
 module.exports = router;
