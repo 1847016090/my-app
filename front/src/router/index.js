@@ -24,7 +24,8 @@ export default new Router({
     },
     {
       path: "/article/:id",
-      component: ShowArticles
+      component: ShowArticles,
+      props: route => ({ id: route.params.id })
     }
   ]
 });

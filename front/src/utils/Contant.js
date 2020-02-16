@@ -18,7 +18,8 @@ String.prototype.format = function(obj) {
 const user = {
   login: apiPrefix + "/user/login",
   modules: apiPrefix + "/user/modules",
-  moduleArticle: apiPrefix + "/user/articles/{moduleKey}"
+  moduleArticle: apiPrefix + "/user/articles/{moduleKey}",
+  articleInfo: apiPrefix + "/user/articles/info/{id}"
 };
 
 export default user;

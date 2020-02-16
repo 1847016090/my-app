@@ -44,7 +44,7 @@ router.get("/articles/:moduleKey", async ctx => {
 router.get("/articles/info/:articleId", async ctx => {
   const { articleId } = ctx.params;
   let articles = db.setCollection("articles");
-  console.log(typeof articleId);
+
   const article = await articles.findOne({ id: Number(articleId) });
   ctx.body = successRequest("Success", { article });
 });

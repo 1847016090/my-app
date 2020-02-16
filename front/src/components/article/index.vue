@@ -1,5 +1,5 @@
 <template>
-  <div style="padding:30px">
+  <div>
     <mavon-editor
       class="md"
       :value="value"
@@ -14,14 +14,23 @@
 </template>
 
 <script>
+import api from "../../utils/Contant";
 export default {
+  props: ["id"],
   data() {
     return {
-      value: '# hahaha'
+      value: "",
     };
   },
-  created() {
-  },
+  async created() {
+    let id = this.id;
+    const {
+      data: {
+        data: { article }
+      }
+    } = await this.axios.get(api.articleInfo.format({ id }));
+    this.value = article.info;
+  }
 };
 </script>
 

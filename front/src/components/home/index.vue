@@ -19,7 +19,7 @@
             :key="article.id"
             :title="article.title"
             :desc="article.detail"
-            @click="articleClick(article._id)"
+            @click="articleClick(article.id)"
             style="border-bottom:8px solid rgb(249,249,249)"
           >
           </van-panel>
