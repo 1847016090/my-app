@@ -11,7 +11,9 @@ import {
   TabbarItem,
   Search,
   Tab,
-  Tabs
+  Tabs,
+  List,
+  Panel
 } from "vant";
 import axios from "axios";
 
@@ -29,6 +31,8 @@ Vue.use(TabbarItem);
 Vue.use(Search);
 Vue.use(Tab);
 Vue.use(Tabs);
+Vue.use(List);
+Vue.use(Panel);
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

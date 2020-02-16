@@ -3,25 +3,28 @@ import Router from "vue-router";
 import Login from "@/components/login";
 import HomePage from "@/components/home";
 import Setting from "@/components/setting";
+import ShowArticles from "@/components/article";
 
 Vue.use(Router);
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: "/",
-      name: "HelloWorld",
       component: Login
     },
     {
       path: "/home",
-      name: "HomePage",
       component: HomePage
     },
     {
       path: "/setting",
-      name: "Setting",
       component: Setting
+    },
+    {
+      path: "/article/:id",
+      component: ShowArticles
     }
   ]
 });

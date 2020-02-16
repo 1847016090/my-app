@@ -33,4 +33,12 @@ router.get("/modules", async ctx => {
   ctx.body = successRequest("Success", { myModules });
 });
 
+router.get("/articles/:moduleKey", async ctx => {
+  const { moduleKey } = ctx.params;
+  let articles = db.setCollection("articles");
+
+  const moduleArticle = await articles.find({ moduleKey }).toArray();
+  ctx.body = successRequest("Success", { moduleArticle });
+});
+
 module.exports = router;
