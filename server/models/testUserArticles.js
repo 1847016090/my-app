@@ -1,5 +1,8 @@
 const mongodb = require("./index");
 const faker = require("faker");
+const fs = require("fs");
+const data = fs.readFileSync("./test.md");
+console.log("data: ", data.toString());
 
 mongodb.once("connect", async () => {
   const col = mongodb.setCollection("articles");
@@ -13,7 +16,9 @@ mongodb.once("connect", async () => {
         moduleKey: ["1", "2", "3", "4", "5", "6"][
           Math.floor(Math.random() * 6)
         ],
-        detail: faker.random.words()
+        detail: faker.random.words(),
+        info: data.toString(),
+        id: i + 1
       };
     }
     // c插入

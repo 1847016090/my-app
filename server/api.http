@@ -17,3 +17,7 @@ content-type: application/json
 ###
 GET http://{{host}}:{{port}}/{{user}}/articles/1 HTTP/1.1
 content-type: application/json
+
+###
+GET http://{{host}}:{{port}}/{{user}}/articles/info/3 HTTP/1.1
+content-type: application/json

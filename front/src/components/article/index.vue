@@ -1,7 +1,5 @@
 <template>
   <div style="padding:30px">
-    dsds
-    <div>dsds</div>
     <mavon-editor
       class="md"
       :value="value"
@@ -23,11 +21,7 @@ export default {
     };
   },
   created() {
-    console.log(Test);
   },
-  components: {
-    Test
-  }
 };
 </script>
 

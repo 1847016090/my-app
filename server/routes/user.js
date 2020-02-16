@@ -29,7 +29,7 @@ router.post("/login", async ctx => {
 
 router.get("/modules", async ctx => {
   let modules = db.setCollection("modules");
-  const myModules = await modules.find(JSON.stringify({})).toArray();
+  const myModules = await modules.find().toArray();
   ctx.body = successRequest("Success", { myModules });
 });
 
@@ -39,6 +39,14 @@ router.get("/articles/:moduleKey", async ctx => {
 
   const moduleArticle = await articles.find({ moduleKey }).toArray();
   ctx.body = successRequest("Success", { moduleArticle });
+});
+
+router.get("/articles/info/:articleId", async ctx => {
+  const { articleId } = ctx.params;
+  let articles = db.setCollection("articles");
+  console.log(typeof articleId);
+  const article = await articles.findOne({ id: Number(articleId) });
+  ctx.body = successRequest("Success", { article });
 });
 
 module.exports = router;
