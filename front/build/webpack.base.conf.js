@@ -71,6 +71,18 @@ module.exports = {
       {
         test: /\.less$/,
         loader: "style-loader!css-loader!less-loader"
+      },
+      {
+        // 处理markdown文件
+        test: /\.md$/,
+        use: [
+          {
+            loader: "vue-loader"
+          },
+          {
+            loader: require.resolve("../src/utils/MarkdownLoader")
+          }
+        ]
       }
     ]
   },

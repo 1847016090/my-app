@@ -16,6 +16,8 @@ import {
   Panel
 } from "vant";
 import axios from "axios";
+import mavonEditor from "mavon-editor";
+import "mavon-editor/dist/css/index.css";
 
 Vue.prototype.axios = axios;
 import App from "./App";
@@ -33,6 +35,8 @@ Vue.use(Tab);
 Vue.use(Tabs);
 Vue.use(List);
 Vue.use(Panel);
+Vue.use(mavonEditor);
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
