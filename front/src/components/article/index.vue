@@ -34,4 +34,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="less" scoped>
+.md {
+    ul {
+        list-style: disc !important;
+    }
+    ol {
+        list-style: decimal !important;
+    }
+}
+</style>

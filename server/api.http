@@ -21,3 +21,15 @@ content-type: application/json
 ###
 GET http://{{host}}:{{port}}/{{user}}/articles/info/3 HTTP/1.1
 content-type: application/json
+
+###
+POST http://{{host}}:{{port}}/{{user}}/articles/add HTTP/1.1
+content-type: application/json
+
+{
+    "title": "111",
+    "moduleKey": "111",
+    "detail": "111",
+    "info": "1111",
+    "id": "232"
+}
